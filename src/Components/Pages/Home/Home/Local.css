@@ -1,0 +1,8 @@
+.backgroundimg {
+  background-image: url(https://images.unsplash.com/photo-1577803645773-f96470509666?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3VuZ2xhc3Nlc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80);
+
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 70vh;
+}

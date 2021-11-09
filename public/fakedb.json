@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Varius Tellus Quam",
+    "off": "1,150,00",
+    "price": "1,050,00",
+    "img": "",
+    "Availability": "In stock",
+    "description": "some text"
+  },
+  {
+    "name": "Curabitur Quisamet",
+    "of": "336,00",
+    "price": "1,050,00",
+    "img": "",
+    "Availability": "In stock",
+    "description": "some text"
+  },
+  {
+    "name": "Tempus Dolor Sit",
+    "price": "1,500",
+    "off": "2,000",
+    "img": "",
+    "Availability": "In stock",
+    "description": "some text"
+  },
+  {
+    "name": "Sagittis Egeterat",
+    "price": "1,599",
+    "off": "2,000",
+    "img": "",
+    "Availability": "In stock",
+    "description": "some text"
+  },
+  {
+    "name": "Massa Quam Leo",
+    "price": "1,250",
+    "off": "8,50",
+    "img": "",
+    "Availability": "In stock"
+  },
+  {
+    "name": "Arcu Vitae Imperdiet",
+    "price": "9,99",
+    "off": "1,000",
+    "img": "",
+    "Availability": "In stock"
+  }
+]
