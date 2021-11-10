@@ -8,6 +8,7 @@ import * as React from "react";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import useAuth from "../../../../Hooks/useAuth";
 import "../../Home/Home/Local.css";
+import AddAProduct from "../AddAProduct/AddAProduct";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageAllOrders from "../MangeAllOrders/ManageAllOrders";
 import MyOrders from "../MyOrders/MyOrders";
@@ -50,6 +51,12 @@ function Dashboard(props) {
           <i class="fas fa-tasks"></i>
         </span>{" "}
         <span className="text-start">Mange Orders</span>
+      </Link>{" "}
+      <Link to={`${url}/add_product`}>
+        <span className="me-3">
+          <i class="far fa-plus-square"></i>
+        </span>{" "}
+        <span className="text-start">Add Prodcuts</span>
       </Link>{" "}
       <Link to={`${url}/my_orders`}>
         <span className="me-3">
@@ -167,6 +174,9 @@ function Dashboard(props) {
           </Route>
           <Route path={`${path}/manage_orders`}>
             <ManageAllOrders />
+          </Route>
+          <Route path={`${path}/add_product`}>
+            <AddAProduct />
           </Route>
           <Route path={`${path}/my_orders`}>
             <MyOrders />

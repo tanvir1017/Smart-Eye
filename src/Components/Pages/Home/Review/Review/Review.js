@@ -20,7 +20,7 @@ const Review = (props) => {
           />
           <Box>
             <Typography variant="h6">{displayName}</Typography>
-            <Typography variant="caption text" style={{ color: "#ffc600" }}>
+            <Typography variant="caption text" style={{ color: "#fa8b6e" }}>
               <Rating
                 initialRating={rating}
                 emptySymbol="far fa-star"

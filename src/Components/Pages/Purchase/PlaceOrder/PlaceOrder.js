@@ -10,15 +10,13 @@ import React, { useState } from "react";
 import useAuth from "../../../../Hooks/useAuth";
 import "../../Home/Home/Local.css";
 
-const PlaceOrder = ({ name }) => {
+const PlaceOrder = ({ product }) => {
   const { user, isLoading } = useAuth();
-
-  const img = `https://i.ibb.co/3fbSzNr/download.png`;
   const initialInfo = {
     displayName: user.displayName,
     email: user.email,
-    img: user.photoURL || img,
-    product: name,
+    img: "",
+    product: "",
   };
   const [purchase, setPurchase] = useState(initialInfo);
   const HandleLogin = (e) => {
@@ -31,7 +29,6 @@ const PlaceOrder = ({ name }) => {
   };
   const handleLoad = (e) => {
     const placeProduct = { ...purchase };
-    e.preventDefault();
     fetch("http://localhost:5000/orders", {
       method: "POST",
       headers: {
@@ -45,13 +42,14 @@ const PlaceOrder = ({ name }) => {
           alert("Your orderd placed");
         }
       });
+    e.preventDefault();
   };
   return (
     <Container sx={{ marginTop: "60px" }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={8} sx={{ m: "auto" }} className="form bg-light">
           <Typography variant="h5" sx={{ fontWeight: "bold", mb: 3 }}>
-            How was this product ?
+            Place your order
           </Typography>
           {!isLoading && (
             <Box>
@@ -81,7 +79,7 @@ const PlaceOrder = ({ name }) => {
                     name="img"
                     type="text"
                     label="img url"
-                    defaultValue={user.photoURL ? user.photoURL : img}
+                    defaultValue={""}
                     onBlur={HandleLogin}
                     variant="standard"
                   />
@@ -94,7 +92,7 @@ const PlaceOrder = ({ name }) => {
                           name="ProductName"
                           label="Product name"
                           type="text"
-                          defaultValue={name}
+                          defaultValue={""}
                           onBlur={HandleLogin}
                           variant="standard"
                         />
@@ -106,7 +104,7 @@ const PlaceOrder = ({ name }) => {
                           name="price"
                           label="Product Price"
                           type="text"
-                          defaultValue={name}
+                          defaultValue={""}
                           onBlur={HandleLogin}
                           variant="standard"
                         />

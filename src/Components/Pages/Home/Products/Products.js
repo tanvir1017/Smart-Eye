@@ -4,6 +4,22 @@ import Product from "../Product/Product";
 const Products = () => {
   const [items, setItems] = useState([]);
   const size = 6;
+  // useEffect(() => {
+  //   async function pd() {
+  //     const res = await fetch(`http://localhost:5000/products?size=${size}`);
+  //     const data = await res.json();
+  //     console.log(data);
+  //   }
+  //   pd();
+  // }, []);
+  //  useEffect(() => {
+  //     fetch(`http://localhost:5000/products?size=${size}`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setItems(data);
+  //     });
+  //     console.log(setItems);
+  //  }, []);
   useEffect(() => {
     fetch(`http://localhost:5000/products?size=${size}`)
       .then((res) => res.json())
