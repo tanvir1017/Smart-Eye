@@ -5,42 +5,48 @@ const Banner = () => {
     <div>
       <div
         id="carouselExampleFade"
-        class="carousel slide carousel-fade"
+        className="carousel slide carousel-fade"
         data-bs-ride="carousel"
       >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
             <img
               src="http://magento2.templatemela.com/v19/MAG251/skin/frontend/templatemela/MAG100219_1/images/banners/main-banner1.jpg"
-              class="d-block w-100"
+              className="d-block w-100"
               alt="..."
             />
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <img
               src="http://magento2.templatemela.com/v19/MAG251/skin/frontend/templatemela/MAG100219_1/images/banners/main-banner2.jpg"
-              class="d-block w-100"
+              className="d-block w-100"
               alt="..."
             />
           </div>
         </div>
         <button
-          class="carousel-control-prev"
+          className="carousel-control-prev"
           type="button"
           data-bs-target="#carouselExampleFade"
           data-bs-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
         </button>
         <button
-          class="carousel-control-next"
+          className="carousel-control-next"
           type="button"
           data-bs-target="#carouselExampleFade"
           data-bs-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
         </button>
       </div>
     </div>

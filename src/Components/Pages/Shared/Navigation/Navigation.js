@@ -7,8 +7,8 @@ const Navigation = () => {
   const { logout, user } = useAuth();
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
           <Link to="/">
             <img
               style={{ width: "50%" }}
@@ -17,7 +17,7 @@ const Navigation = () => {
             />
           </Link>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -25,34 +25,41 @@ const Navigation = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <Link class="nav-link active" to="/home">
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <Link className="nav-link active" to="/home">
                   Home
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link active" to="/shop">
+              <li className="nav-item">
+                <Link className="nav-link active" to="/shop">
                   Shop
                 </Link>
               </li>
-
-              <li class="nav-item">
-                <span class="nav-link active">{user.displayName}</span>
+              <li className="nav-item">
+                <Link className="nav-link active" to="/dashboard">
+                  Dashboard
+                </Link>
               </li>
-              {user.diplayName ? (
-                <li class="nav-item">
-                  <Link class="nav-link active" to="/login">
-                    Login <i class="fas fa-sign-in-alt"></i>
-                  </Link>
+
+              <li className="nav-item">
+                <span className="nav-link active text-dark">
+                  <strong> {user.displayName}</strong>
+                </span>
+              </li>
+              {user.email ? (
+                <li className="nav-item">
+                  <span onClick={logout} className="nav-link active">
+                    Logout <i className="fas fa-sign-out-alt"></i>
+                  </span>
                 </li>
               ) : (
-                <li class="nav-item">
-                  <Link onClick={logout} class="nav-link active" to="/login">
-                    Logout <i class="fas fa-sign-out-alt"></i>
+                <li className="nav-item">
+                  <Link className="nav-link active" to="/login">
+                    Login <i className="fas fa-sign-in-alt"></i>
                   </Link>
                 </li>
               )}

@@ -9,6 +9,7 @@ import {
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import useAuth from "../../../../Hooks/useAuth";
+import Navigation from "../../Shared/Navigation/Navigation";
 
 const Register = () => {
   const { register, isLoading, user, error } = useAuth();
@@ -30,84 +31,92 @@ const Register = () => {
     e.preventDefault();
   };
   return (
-    <Container>
-      <Grid container spacing={2}>
-        {!isLoading && (
-          <Grid item xs={12} md={6} sx={{ m: "auto" }}>
-            <Typography variant="h5" sx={{ fontWeight: "bold", mb: 3 }}>
-              Registation
-            </Typography>
-            <Grid>
-              <form onSubmit={handleSubmit}>
-                <TextField
-                  sx={{ width: "75%", m: 1 }}
-                  id="standard-basic"
-                  label="Name"
-                  type="text"
-                  name="name"
-                  onBlur={HandleLogin}
-                  variant="standard"
-                />
-                <TextField
-                  sx={{ width: "75%", m: 1 }}
-                  id="standard-basic"
-                  label="Email"
-                  type="email"
-                  name="email"
-                  onBlur={HandleLogin}
-                  variant="standard"
-                />
-                <TextField
-                  sx={{ width: "75%", m: 1 }}
-                  id="standard-basic"
-                  name="password"
-                  type="password"
-                  label="password"
-                  onBlur={HandleLogin}
-                  variant="standard"
-                />
-                <TextField
-                  sx={{ width: "75%", m: 1 }}
-                  id="standard-basic"
-                  name="Retype_password"
-                  type="password"
-                  label="Retype password"
-                  onBlur={HandleLogin}
-                  variant="standard"
-                />
-                <br />{" "}
-                <button type="submit" className="common-btn loginbtn">
-                  Sign up
-                </button>
-                <br />
-                <Typography
-                  variant="caption text"
-                  sx={{
-                    marginTop: "15px",
-                    display: "inherit",
-                    fontStyle: "italic",
-                  }}
-                >
-                  Already have an account ? <Link to="/login">Log in</Link>{" "}
-                </Typography>
-                {user.email && (
-                  <Alert severity="success">Successfuly created account </Alert>
-                )}
-                {error && <Alert severity="error">{error} </Alert>}
-              </form>
+    <>
+      <Navigation />
+      <Container sx={{ marginTop: "60px" }}>
+        <Grid container spacing={2}>
+          {!isLoading && (
+            <Grid
+              item
+              xs={12}
+              md={8}
+              sx={{ m: "auto" }}
+              className="form bg-light"
+            >
+              <Typography variant="h5" sx={{ fontWeight: "bold", mb: 3 }}>
+                Registation
+              </Typography>
+              <Grid>
+                <form onSubmit={handleSubmit}>
+                  <TextField
+                    sx={{ width: "75%", m: 1 }}
+                    id="standard-basic"
+                    label="Name"
+                    type="text"
+                    name="name"
+                    onBlur={HandleLogin}
+                    variant="standard"
+                  />
+                  <TextField
+                    sx={{ width: "75%", m: 1 }}
+                    id="standard-basic"
+                    label="Email"
+                    type="email"
+                    name="email"
+                    onBlur={HandleLogin}
+                    variant="standard"
+                  />
+                  <TextField
+                    sx={{ width: "75%", m: 1 }}
+                    id="standard-basic"
+                    name="password"
+                    type="password"
+                    label="password"
+                    onBlur={HandleLogin}
+                    variant="standard"
+                  />
+                  <TextField
+                    sx={{ width: "75%", m: 1 }}
+                    id="standard-basic"
+                    name="Retype_password"
+                    type="password"
+                    label="Retype password"
+                    onBlur={HandleLogin}
+                    variant="standard"
+                  />
+                  <br />{" "}
+                  <button type="submit" className="shadow-lg  loginbtn">
+                    Sign up
+                  </button>
+                  <br />
+                  <Typography
+                    variant="caption text"
+                    sx={{
+                      marginTop: "15px",
+                      display: "inherit",
+                      fontStyle: "italic",
+                    }}
+                  >
+                    Already have an account ? <Link to="/login">Log in</Link>{" "}
+                  </Typography>
+                  {user.email && (
+                    <Alert severity="success">
+                      Successfuly created account{" "}
+                    </Alert>
+                  )}
+                  {error && <Alert severity="error">{error} </Alert>}
+                </form>
+              </Grid>
             </Grid>
-          </Grid>
-        )}
-        {isLoading && (
-          <Grid item xs={12} md={6} sx={{ m: "auto" }}>
-            <CircularProgress />
-          </Grid>
-        )}
-        <Grid item xs={12} md={6}>
-          hello
+          )}
+          {isLoading && (
+            <Grid item xs={12} md={6} sx={{ m: "auto" }}>
+              <CircularProgress />
+            </Grid>
+          )}
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </>
   );
 };
 
