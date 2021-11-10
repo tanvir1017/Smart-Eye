@@ -92,7 +92,7 @@ const Review = () => {
                     id="standard-basic"
                     name="rating"
                     label="Rate out of 5"
-                    type="number"
+                    type="text"
                     onBlur={HandleLogin}
                     variant="standard"
                   />

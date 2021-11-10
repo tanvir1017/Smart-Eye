@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Rating from "react-rating";
 import { useParams } from "react-router";
 import Navigation from "../../Shared/Navigation/Navigation";
 import PlaceOrder from "../PlaceOrder/PlaceOrder";
@@ -50,7 +51,14 @@ const Purchase = () => {
             <h4 style={{ fontSize: "18px" }} className="text-muted">
               Availability : {Availability}
             </h4>
-            <p style={{ fontWeight: "bold", color: "#fd45f42" }}>{rating}</p>
+            <p style={{ fontWeight: "bold", color: "#fa8b6e" }}>
+              <Rating
+                initialRating={rating}
+                emptySymbol="far fa-star"
+                fullSymbol="fas fa-star"
+                readonly
+              ></Rating>
+            </p>
           </div>
           <div className="col-md-7 col-lg-7 col-sm-12 ">
             <PlaceOrder name={name}></PlaceOrder>

@@ -1,8 +1,9 @@
 import React from "react";
+import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
 const Product = ({ item }) => {
-  const { name, price, img, off, Availability, _id } = item;
+  const { name, price, img, off, Availability, _id, rating } = item;
   return (
     <div>
       <div className="col">
@@ -10,10 +11,12 @@ const Product = ({ item }) => {
           <img src={img} alt="" />
           <div className="itemDetails" style={{ marginTop: "-2%" }}>
             <span style={{ color: "#fa8b6e", fontSize: "12px" }}>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
+              <Rating
+                initialRating={rating}
+                emptySymbol="far fa-star"
+                fullSymbol="fas fa-star"
+                readonly
+              ></Rating>
             </span>
             <p className="product-name">{name}</p>
             <h5 style={{ fontSize: "20px" }}>
