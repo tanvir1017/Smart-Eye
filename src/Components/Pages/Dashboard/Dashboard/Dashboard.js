@@ -119,17 +119,24 @@ function Dashboard(props) {
       <AppBar
         position="fixed"
         sx={{
+          backgroundColor: "white",
+          boxShadow: "none",
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar style={{ backgroundColor: "white" }}>
+        <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{
+              mr: 2,
+              display: { sm: "none" },
+              backgroundColor: "#fa8b6e",
+              boxShadow: "4px 0px 8px 0px rgba(36, 36, 36, 0.685)",
+            }}
           >
             <MenuIcon />
           </IconButton>
@@ -153,6 +160,8 @@ function Dashboard(props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              boxShadow: "4px 0px 8px 0px rgba(36, 36, 36, 0.685)",
+              backgroundColor: "#fa8b6e",
             },
           }}
         >
@@ -165,6 +174,8 @@ function Dashboard(props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              boxShadow: "4px 0px 8px 0px rgba(36, 36, 36, 0.685)",
+              backgroundColor: "#fa8b6e",
             },
           }}
           open
