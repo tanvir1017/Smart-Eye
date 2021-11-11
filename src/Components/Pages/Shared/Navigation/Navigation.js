@@ -52,7 +52,11 @@ const Navigation = () => {
               </li>
               {user.email ? (
                 <li className="nav-item">
-                  <span onClick={logout} className="nav-link active">
+                  <span
+                    style={{ cursor: "pointer" }}
+                    onClick={logout}
+                    className="nav-link active"
+                  >
                     Logout <i className="fas fa-sign-out-alt"></i>
                   </span>
                 </li>

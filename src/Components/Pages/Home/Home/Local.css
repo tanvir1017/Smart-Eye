@@ -73,14 +73,15 @@
 }
 .css-1d9c4l9-MuiDrawer-docked .MuiDrawer-paper {
   box-sizing: border-box;
-  width: 20% !important;
+  width: 15% !important;
+  box-shadow: 4px 0px 8px 0px rgba(36, 36, 36, 0.685);
   background: linear-gradient(to left, #d45f42, #f75a33);
 }
 .dashboard-link a {
   margin-top: -15px;
   padding: 10px 30px;
   text-align: left;
-  font-size: 23px;
+  font-size: 18px;
   display: block;
   color: white;
   text-decoration: none !important;
@@ -88,10 +89,11 @@
 .user-Info {
   background-color: white;
   color: #fa8b6e;
-  padding: 10px 25px;
+  padding: 8px 20px;
   font-weight: 600;
   border-radius: 10px;
-  text-align: left;
+  font-size: 20px;
+  text-align: center;
 }
 
 /* ;login */

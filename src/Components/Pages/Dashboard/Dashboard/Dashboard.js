@@ -10,6 +10,7 @@ import useAuth from "../../../../Hooks/useAuth";
 import "../../Home/Home/Local.css";
 import AddAProduct from "../AddAProduct/AddAProduct";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
+import ManageProducts from "../ManageProducts/ManageProducts";
 import ManageAllOrders from "../MangeAllOrders/ManageAllOrders";
 import MyOrders from "../MyOrders/MyOrders";
 import Payment from "../Payment/Payment";
@@ -19,7 +20,7 @@ const drawerWidth = 200;
 
 function Dashboard(props) {
   let { path, url } = useRouteMatch();
-  const { user, logout } = useAuth();
+  const { user, logout, admin } = useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -40,42 +41,56 @@ function Dashboard(props) {
         </span>{" "}
         <span className="text-start ">Home</span>
       </Link>{" "}
-      <Link to={`${url}/admin`}>
-        <span className="me-3">
-          <i class="fas fa-user-shield "></i>
-        </span>{" "}
-        <span className="text-start">Admin</span>
-      </Link>{" "}
-      <Link to={`${url}/manage_orders`}>
-        <span className="me-3">
-          <i class="fas fa-tasks"></i>
-        </span>{" "}
-        <span className="text-start">Mange Orders</span>
-      </Link>{" "}
-      <Link to={`${url}/add_product`}>
-        <span className="me-3">
-          <i class="far fa-plus-square"></i>
-        </span>{" "}
-        <span className="text-start">Add Prodcuts</span>
-      </Link>{" "}
-      <Link to={`${url}/my_orders`}>
-        <span className="me-3">
-          <i class="fab fa-shopify"></i>
-        </span>{" "}
-        <span className="text-start">My orders</span>
-      </Link>{" "}
+      {admin && (
+        <Box>
+          <Link to={`${url}/admin`}>
+            <span className="me-3">
+              <i class="fas fa-user-shield "></i>
+            </span>{" "}
+            <span className="text-start">Admin</span>
+          </Link>{" "}
+          <Link to={`${url}/manage_orders`}>
+            <span className="me-3">
+              <i class="fas fa-tasks"></i>
+            </span>{" "}
+            <span className="text-start">Mange Orders</span>
+          </Link>{" "}
+          <Link to={`${url}/add_product`}>
+            <span className="me-3">
+              <i class="far fa-plus-square"></i>
+            </span>{" "}
+            <span className="text-start">Add Prodcuts</span>
+          </Link>{" "}
+          <Link to={`${url}/manage_product`}>
+            <span className="me-3">
+              <i class="fas fa-tasks"></i>
+            </span>{" "}
+            <span className="text-start">Products</span>
+          </Link>{" "}
+        </Box>
+      )}
+      {!admin && (
+        <Link to={`${url}/my_orders`}>
+          <span className="me-3">
+            <i class="fab fa-shopify"></i>
+          </span>{" "}
+          <span className="text-start">My orders</span>
+        </Link>
+      )}
       <Link to={`${url}/payment`}>
         <span className="me-3">
           <i class="far fa-handshake"></i>
         </span>{" "}
         <span className="text-start">Payment</span>
       </Link>{" "}
-      <Link to={`${url}/review`}>
-        <span className="me-3">
-          <i class="fab fa-replyd"></i>
-        </span>{" "}
-        <span className="text-start">Review</span>
-      </Link>{" "}
+      {!admin && (
+        <Link to={`${url}/review`}>
+          <span className="me-3">
+            <i class="fab fa-replyd"></i>
+          </span>{" "}
+          <span className="text-start">Review</span>
+        </Link>
+      )}
       <Link to={`${url}`}>
         {" "}
         <span className="me-3">
@@ -177,6 +192,9 @@ function Dashboard(props) {
           </Route>
           <Route path={`${path}/add_product`}>
             <AddAProduct />
+          </Route>
+          <Route path={`${path}/manage_product`}>
+            <ManageProducts />
           </Route>
           <Route path={`${path}/my_orders`}>
             <MyOrders />
