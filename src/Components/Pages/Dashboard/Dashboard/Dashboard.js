@@ -9,6 +9,7 @@ import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import useAuth from "../../../../Hooks/useAuth";
 import "../../Home/Home/Local.css";
 import AddAProduct from "../AddAProduct/AddAProduct";
+import DashChart from "../DashChart/DashChart";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageProducts from "../ManageProducts/ManageProducts";
 import ManageAllOrders from "../MangeAllOrders/ManageAllOrders";
@@ -42,24 +43,26 @@ function Dashboard(props) {
         <span className="text-start ">Home</span>
       </Link>{" "}
       {admin && (
+        <Link to={`${url}/admin`}>
+          <span className="me-3">
+            <i class="fas fa-user-shield "></i>
+          </span>{" "}
+          <span className="text-start">Admin</span>
+        </Link>
+      )}
+      <Link to={`${url}/my_orders`}>
+        <span className="me-3">
+          <i class="fab fa-shopify"></i>
+        </span>{" "}
+        <span className="text-start">My orders</span>
+      </Link>
+      {admin && (
         <Box>
-          <Link to={`${url}/admin`}>
-            <span className="me-3">
-              <i class="fas fa-user-shield "></i>
-            </span>{" "}
-            <span className="text-start">Admin</span>
-          </Link>{" "}
           <Link to={`${url}/manage_orders`}>
             <span className="me-3">
               <i class="fas fa-tasks"></i>
             </span>{" "}
             <span className="text-start">Mange Orders</span>
-          </Link>{" "}
-          <Link to={`${url}/add_product`}>
-            <span className="me-3">
-              <i class="far fa-plus-square"></i>
-            </span>{" "}
-            <span className="text-start">Add Prodcuts</span>
           </Link>{" "}
           <Link to={`${url}/manage_product`}>
             <span className="me-3">
@@ -67,15 +70,13 @@ function Dashboard(props) {
             </span>{" "}
             <span className="text-start">Products</span>
           </Link>{" "}
+          <Link to={`${url}/add_product`}>
+            <span className="me-3">
+              <i class="far fa-plus-square"></i>
+            </span>{" "}
+            <span className="text-start">Add Prodcuts</span>
+          </Link>{" "}
         </Box>
-      )}
-      {!admin && (
-        <Link to={`${url}/my_orders`}>
-          <span className="me-3">
-            <i class="fab fa-shopify"></i>
-          </span>{" "}
-          <span className="text-start">My orders</span>
-        </Link>
       )}
       <Link to={`${url}/payment`}>
         <span className="me-3">
@@ -182,22 +183,23 @@ function Dashboard(props) {
         <Toolbar />
         <Switch>
           <Route exact path={path}>
-            <MyOrders />
+            <DashChart />
           </Route>
           <Route path={`${path}/admin`}>
             <MakeAdmin />
           </Route>
-          <Route path={`${path}/manage_orders`}>
-            <ManageAllOrders />
-          </Route>
           <Route path={`${path}/add_product`}>
             <AddAProduct />
           </Route>
-          <Route path={`${path}/manage_product`}>
-            <ManageProducts />
+          <Route path={`${path}/manage_orders`}>
+            <ManageAllOrders />
           </Route>
+
           <Route path={`${path}/my_orders`}>
             <MyOrders />
+          </Route>
+          <Route path={`${path}/manage_product`}>
+            <ManageProducts />
           </Route>
           <Route path={`${path}/review`}>
             <Review />

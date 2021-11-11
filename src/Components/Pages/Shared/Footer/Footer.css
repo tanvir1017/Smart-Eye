@@ -1,0 +1,27 @@
+.footerBackground {
+  background: #222222;
+  color: white;
+}
+.footerContact p {
+  font-size: 14px;
+}
+.footerContact a {
+  margin-top: 10px;
+  color: white;
+  text-decoration: none;
+  transition: 0.6s;
+}
+.footerContact a:hover {
+  text-decoration: underline;
+}
+.footerAlert {
+  background: #fa8b6e;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  color: #000000;
+}
+.copyrigtText {
+  text-align: center;
+  background-color: #fa8b6e;
+}

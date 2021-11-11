@@ -1,26 +1,35 @@
+import { Container, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import useAuth from "../../../../Hooks/useAuth";
 import Orders from "./Orders";
 
 const MyOrders = () => {
   const { user } = useAuth();
-  const [myOrders, setMyOrders] = useState([]);
-  console.log(myOrders);
+  console.log(user.email);
+  const [myOrders, setMyOrders] = useState();
   useEffect(() => {
-    const url = `http://localhost:5000/orders?email=${user.email}`;
-    fetch(url)
+    fetch(`http://localhost:5000/email?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setMyOrders(data));
   }, [user.email]);
-
   return (
     <>
       {" "}
-      <div class="row row-cols-md-3 ms-5 row-cols-sm-1 row-cols-lg-3">
-        {myOrders.map((order) => (
-          <Orders key={order._id} order={order}></Orders>
-        ))}
-      </div>
+      <Container>
+        <div className="products" style={{ marginBottom: "" }}>
+          My Orders
+        </div>
+        <Grid container spacing={2} sx={{ my: 5 }}>
+          {myOrders?.map((order) => (
+            <Orders
+              key={order._id}
+              setMyOrders={setMyOrders}
+              myOrders={myOrders}
+              order={order}
+            ></Orders>
+          ))}
+        </Grid>
+      </Container>
     </>
   );
 };

@@ -12,7 +12,7 @@ const ManageProducts = () => {
       });
   }, []);
   return (
-    <div>
+    <div className="container mb-4">
       <div className="products" style={{ marginBottom: "-3%" }}>
         All Products From Store
       </div>

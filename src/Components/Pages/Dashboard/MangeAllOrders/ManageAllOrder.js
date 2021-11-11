@@ -1,9 +1,15 @@
 import { Divider, Grid, Paper, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useState } from "react";
 import Rating from "react-rating";
 
-const Orders = ({ order, myOrders, setMyOrders }) => {
+const ManageAllOrder = ({
+  allOrder,
+  setAllOrders,
+  allOrders,
+  number,
+  setNumber,
+}) => {
   const {
     img,
     name,
@@ -14,7 +20,8 @@ const Orders = ({ order, myOrders, setMyOrders }) => {
     email,
     adress,
     status,
-  } = order;
+    _id,
+  } = allOrder;
   const handleDelete = (id) => {
     const proccessed = window.confirm("Are really wants to delete");
     if (proccessed) {
@@ -26,12 +33,28 @@ const Orders = ({ order, myOrders, setMyOrders }) => {
         .then((data) => {
           if (data.deletedCount) {
             alert("Product has been deleted");
-            const reamaining = myOrders.filter((mycart) => mycart._id !== id);
-            setMyOrders(reamaining);
+            const reamaining = allOrders.filter((mycart) => mycart._id !== id);
+            setAllOrders(reamaining);
           }
           console.log(data);
         });
     }
+  };
+  const [loading, isLoading] = useState(false);
+  const HandelApproved = (e) => {
+    const checked = e.target.checked;
+
+    fetch("http://localhost:5000/orders", {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ _id, checked }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        isLoading(!loading);
+      });
   };
   return (
     <Grid xs={12} md={3} sm={6}>
@@ -99,7 +122,7 @@ const Orders = ({ order, myOrders, setMyOrders }) => {
               </Typography>
               <Box className="d-flex mt-2 px-1  justify-content-between">
                 <span
-                  onClick={() => handleDelete(order._id)}
+                  onClick={() => handleDelete(allOrder._id)}
                   style={{
                     background: "rgb(242 174 156)",
                     padding: "0px 16px",
@@ -111,6 +134,11 @@ const Orders = ({ order, myOrders, setMyOrders }) => {
                   {" "}
                   cancel
                 </span>
+                <input
+                  onChange={HandelApproved}
+                  className="form-check-input ms-1"
+                  type="checkbox"
+                />
                 <span
                   style={{
                     background: "rgb(122 246 166)",
@@ -133,4 +161,4 @@ const Orders = ({ order, myOrders, setMyOrders }) => {
   );
 };
 
-export default Orders;
+export default ManageAllOrder;

@@ -12,23 +12,32 @@ import "../../Home/Home/Local.css";
 
 const PlaceOrder = ({ product }) => {
   const { user, isLoading } = useAuth();
-  const initialInfo = {
+  const { name, img, price, Availability, rating } = product;
+  const [purchase, setPurchase] = useState({
     displayName: user.displayName,
     email: user.email,
+    name: "",
     img: "",
-    product: "",
-  };
-  const [purchase, setPurchase] = useState(initialInfo);
+    price: "",
+    status: false,
+  });
   const HandleLogin = (e) => {
     const field = e.target.name;
     const value = e.target.value;
     const newLoginData = { ...purchase };
     newLoginData[field] = value;
     setPurchase(newLoginData);
-    console.log(newLoginData);
   };
   const handleLoad = (e) => {
-    const placeProduct = { ...purchase };
+    e.preventDefault();
+    const placeProduct = {
+      ...purchase,
+      name,
+      img,
+      price,
+      Availability,
+      rating,
+    };
     fetch("http://localhost:5000/orders", {
       method: "POST",
       headers: {
@@ -42,7 +51,6 @@ const PlaceOrder = ({ product }) => {
           alert("Your orderd placed");
         }
       });
-    e.preventDefault();
   };
   return (
     <Container sx={{ marginTop: "60px" }}>
@@ -54,84 +62,48 @@ const PlaceOrder = ({ product }) => {
           {!isLoading && (
             <Box>
               <Grid>
-                <form onSubmit={handleLoad}>
-                  <TextField
-                    sx={{ width: "100%", m: 1 }}
-                    id="standard-basic"
-                    label="Name"
-                    name="displayName"
-                    defaultValue={user.displayName}
-                    onBlur={HandleLogin}
-                    variant="standard"
-                  />
-                  <TextField
-                    sx={{ width: "100%", m: 1 }}
-                    id="standard-basic"
-                    name="email"
-                    label="email"
-                    defaultValue={user.email}
-                    onBlur={HandleLogin}
-                    variant="standard"
-                  />
-                  <TextField
-                    sx={{ width: "100%", m: 1 }}
-                    id="standard-basic"
-                    name="img"
-                    type="text"
-                    label="img url"
-                    defaultValue={""}
-                    onBlur={HandleLogin}
-                    variant="standard"
-                  />
-                  <Box>
-                    <Grid container spacing={1}>
-                      <Grid xs={12} md={6}>
-                        <TextField
-                          sx={{ width: "90%", m: 1 }}
-                          id="standard-basic"
-                          name="ProductName"
-                          label="Product name"
-                          type="text"
-                          defaultValue={""}
-                          onBlur={HandleLogin}
-                          variant="standard"
-                        />
-                      </Grid>
-                      <Grid xs={12} md={6}>
-                        <TextField
-                          sx={{ width: "90%", m: 1 }}
-                          id="standard-basic"
-                          name="price"
-                          label="Product Price"
-                          type="text"
-                          defaultValue={""}
-                          onBlur={HandleLogin}
-                          variant="standard"
-                        />
-                      </Grid>
-                    </Grid>
-                  </Box>
-                  <TextField
-                    sx={{ width: "100%", m: 1 }}
-                    name="adress"
-                    label="adress"
-                    type="text"
-                    multiline
-                    id="outlined-multiline-static"
-                    rows={4}
-                    required
-                    onBlur={HandleLogin}
-                    variant="standard"
-                  />
-                  <br />{" "}
-                  <button
-                    type="submit"
-                    className="common-btn loginbtn shadow-lg"
-                  >
-                    Send
-                  </button>
-                  <br />{" "}
-                </form>
+                {product.name && (
+                  <form onSubmit={handleLoad}>
+                    <TextField
+                      sx={{ width: "100%", m: 1 }}
+                      id="standard-basic"
+                      label="Name"
+                      name="displayName"
+                      defaultValue={user.displayName}
+                      onBlur={HandleLogin}
+                      variant="standard"
+                    />
+                    <TextField
+                      sx={{ width: "100%", m: 1 }}
+                      id="standard-basic"
+                      name="email"
+                      label="email"
+                      defaultValue={user.email}
+                      onBlur={HandleLogin}
+                      variant="standard"
+                    />
+                    <TextField
+                      sx={{ width: "100%", m: 1 }}
+                      name="adress"
+                      label="adress"
+                      type="text"
+                      multiline
+                      id="outlined-multiline-static"
+                      rows={4}
+                      required
+                      onBlur={HandleLogin}
+                      variant="standard"
+                    />
+                    <br />{" "}
+                    <button
+                      type="submit"
+                      className="common-btn loginbtn shadow-lg"
+                    >
+                      Send
+                    </button>
+                    <br />{" "}
+                  </form>
+                )}
               </Grid>
             </Box>
           )}

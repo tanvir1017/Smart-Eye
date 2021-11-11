@@ -4,18 +4,21 @@ import Rating from "react-rating";
 const ManageProduct = ({ product, setProducts, products }) => {
   const { img, name, Availability, rating, price, off } = product;
   const handleDelete = (id) => {
-    const url = `http://localhost:5000/products/${id}`;
-    fetch(url, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount) {
-          const reamaining = products.filter((product) => product._id !== id);
-          setProducts(reamaining);
-          alert("Product deleted");
-        }
-      });
+    const proccessed = window.confirm("are you really wants to delete ?");
+    if (proccessed) {
+      const url = `http://localhost:5000/products/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount) {
+            alert("Product deleted");
+            const reamaining = products.filter((product) => product._id !== id);
+            setProducts(reamaining);
+          }
+        });
+    }
   };
   return (
     <div className="container">

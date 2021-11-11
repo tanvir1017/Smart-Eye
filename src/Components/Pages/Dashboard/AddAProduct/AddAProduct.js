@@ -11,14 +11,7 @@ import useAuth from "../../../../Hooks/useAuth";
 import "../../Home/Home/Local.css";
 
 const AddAProduct = () => {
-  const { user, isLoading } = useAuth();
-  //   const initialInfo = {
-  //     displayName: user.displayName,
-  //     email: user.email,
-  //     img: user.photoURL || img,
-  //     review: "",
-  //     rating: "",
-  //   };
+  const { isLoading } = useAuth();
   const [review, setReview] = useState({});
   const HandleLogin = (e) => {
     const field = e.target.name;

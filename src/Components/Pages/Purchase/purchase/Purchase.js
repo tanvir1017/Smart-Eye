@@ -11,7 +11,6 @@ const Purchase = () => {
     fetch(`http://localhost:5000/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setProduct(data);
       });
   }, [id]);
@@ -40,7 +39,7 @@ const Purchase = () => {
       <div className="container">
         <div className="row ">
           <div className="col-md-5 col-lg-5 col-sm-12 m-auto">
-            <img style={{ width: "100%" }} src={product.img} alt="" />
+            <img style={{ width: "100%" }} src={img} alt="" />
             <h6 style={{ fontWeight: "bold", color: "#fd45f42" }}>{name}</h6>
             <h5 style={{ fontSize: "25px" }}>
               <span>$ {price}</span>{" "}
@@ -61,7 +60,7 @@ const Purchase = () => {
             </p>
           </div>
           <div className="col-md-7 col-lg-7 col-sm-12 ">
-            <PlaceOrder name={name}></PlaceOrder>
+            <PlaceOrder product={product}></PlaceOrder>
           </div>
         </div>
 

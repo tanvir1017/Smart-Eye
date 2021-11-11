@@ -15,7 +15,6 @@
 .backgroundimg3 {
   background-image: url(https://i.ibb.co/HPp1v4f/banner-2.jpg);
   background-size: cover;
-
   background-repeat: no-repeat;
   height: 80vh;
 }
@@ -57,7 +56,7 @@
   margin-top: 41px;
   position: absolute;
   background-color: #fa8b6e;
-  margin-left: 28px;
+  margin-left: 22px;
 }
 .product-name {
   margin-bottom: 3px;
@@ -74,6 +73,14 @@
 .css-1d9c4l9-MuiDrawer-docked .MuiDrawer-paper {
   box-sizing: border-box;
   width: 15% !important;
+  box-shadow: 4px 0px 8px 0px rgba(36, 36, 36, 0.685);
+  background: linear-gradient(to left, #d45f42, #f75a33);
+}
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+  box-shadow: 4px 0px 8px 0px rgba(36, 36, 36, 0.685);
+  background: linear-gradient(to left, #d45f42, #f75a33);
+}
+.css-i4bv87-MuiSvgIcon-root {
   box-shadow: 4px 0px 8px 0px rgba(36, 36, 36, 0.685);
   background: linear-gradient(to left, #d45f42, #f75a33);
 }
@@ -130,8 +137,6 @@
   margin-right: 30px;
 }
 
-/* banner section3
- */
 .banner_section3 {
   background-image: url(https://i.ibb.co/HPp1v4f/banner-2.jpg);
 }
@@ -157,6 +162,7 @@
   margin-top: 58px;
   margin-left: 124px;
 }
+
 .column-icon-last-child i {
   border: 2px solid #bebebe;
   padding: 50px;
@@ -187,4 +193,120 @@
 }
 .row_text p {
   font-size: 18px;
+}
+
+/* --------------------------------------------------------
+------------------------------------------------------------ */
+/* On screens that are 992px or less, set the background color to olive  */
+@media screen and (max-width: 992px) {
+}
+
+/* On screens that are 600px or less, set the background color to olive  */
+@media screen and (max-width: 668px) {
+  .products {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .products::before {
+    width: 82px;
+    margin-left: -111px;
+  }
+  .products::after {
+    content: "";
+    width: 43px;
+    height: 11px;
+    margin-top: 41px;
+    position: absolute;
+    background-color: #fa8b6e;
+    margin-left: 6px;
+  }
+  .backgroundimg {
+    background-image: url(https://i.ibb.co/px88M0n/wepik-20211010-14198.png);
+    background-size: cover;
+    background-attachment: unset;
+    height: 50vh;
+  }
+  .background-banner {
+    background-image: url();
+    clip-path: none;
+    height: 0vh;
+    position: relative;
+  }
+  .banner-heading {
+    position: static;
+    margin-left: -23px;
+    margin-top: 200px;
+  }
+  .banner-heading h2 {
+    font-size: 20px;
+    color: white;
+  }
+  .banner-heading p {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+  }
+  .banner-heading h2,
+  p {
+    width: 100%;
+    color: white;
+  }
+  .easy-steps {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  .backgroundimg3 {
+    height: 70vh;
+  }
+  .row_text {
+    width: auto;
+    margin-left: 0px;
+    margin-top: 8px;
+    box-shadow: none;
+    margin-bottom: -19px;
+  }
+
+  .row_text h2,
+  p {
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .column-icon i {
+    padding: 25px;
+    border: 2px solid #bebebe;
+    padding: 20px;
+    border-radius: 0px;
+  }
+  .column-icon p {
+    font-size: 14px;
+    margin-bottom: -3px;
+  }
+  .column-icon-last-child i {
+    padding: 25px;
+    border: 2px solid #bebebe;
+    padding: 20px;
+    border-radius: 0px;
+  }
+  .column-icon-last-child p {
+    font-size: 14px;
+  }
+  .col.column-icon:before {
+    content: "";
+    display: inline-flex;
+    background: white;
+    width: 0px;
+    height: 0px;
+    position: unset;
+    margin-top: 30px;
+    margin-left: 0px;
+  }
+  .col.column-icon:after {
+    content: "";
+    width: 34px;
+    height: 11px;
+    margin-top: 41px;
+    position: absolute;
+    background-color: #fa8b6e;
+    margin-left: 6px;
+  }
 }
