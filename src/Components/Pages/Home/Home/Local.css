@@ -1,3 +1,17 @@
+.css-1d9c4l9-MuiDrawer-docked .MuiDrawer-paper {
+  box-sizing: border-box;
+  width: 15% !important;
+  box-shadow: 4px 0px 8px 0px rgba(36, 36, 36, 0.685);
+  background: linear-gradient(to left, #d45f42, #f75a33) !important;
+}
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+  box-shadow: 4px 0px 8px 0px rgba(36, 36, 36, 0.685);
+  background: linear-gradient(to left, #d45f42, #f75a33) !important;
+}
+.css-i4bv87-MuiSvgIcon-root {
+  box-shadow: 4px 0px 8px 0px rgba(36, 36, 36, 0.685);
+  background: linear-gradient(to left, #d45f42, #f75a33) !important;
+}
 .backgroundimg {
   background-image: url(https://i.ibb.co/px88M0n/wepik-20211010-14198.png);
   background-size: cover;
@@ -70,20 +84,7 @@
   min-height: 10% !important;
   background-color: #fff !important;
 }
-.css-1d9c4l9-MuiDrawer-docked .MuiDrawer-paper {
-  box-sizing: border-box;
-  width: 15% !important;
-  box-shadow: 4px 0px 8px 0px rgba(36, 36, 36, 0.685);
-  background: linear-gradient(to left, #d45f42, #f75a33);
-}
-.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
-  box-shadow: 4px 0px 8px 0px rgba(36, 36, 36, 0.685);
-  background: linear-gradient(to left, #d45f42, #f75a33);
-}
-.css-i4bv87-MuiSvgIcon-root {
-  box-shadow: 4px 0px 8px 0px rgba(36, 36, 36, 0.685);
-  background: linear-gradient(to left, #d45f42, #f75a33);
-}
+
 .dashboard-link a {
   margin-top: -15px;
   padding: 10px 30px;
