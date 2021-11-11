@@ -24,7 +24,7 @@ const AddAProduct = () => {
   const handleLoad = (e) => {
     const userReview = { ...review };
     e.preventDefault();
-    fetch("http://localhost:5000/products", {
+    fetch("https://damp-dawn-73737.herokuapp.com/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

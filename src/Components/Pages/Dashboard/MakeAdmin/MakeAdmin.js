@@ -17,7 +17,7 @@ const MakeAdmin = () => {
     setOpen(false);
   };
   const handleOnSubmit = (e) => {
-    fetch("http://localhost:5000/users/admin", {
+    fetch("https://damp-dawn-73737.herokuapp.com/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

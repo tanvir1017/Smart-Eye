@@ -18,7 +18,7 @@ const Orders = ({ order, myOrders, setMyOrders }) => {
   const handleDelete = (id) => {
     const proccessed = window.confirm("Are really wants to delete");
     if (proccessed) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://damp-dawn-73737.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })

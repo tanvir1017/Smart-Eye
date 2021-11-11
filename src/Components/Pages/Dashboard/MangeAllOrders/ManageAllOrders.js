@@ -6,7 +6,7 @@ const ManageAllOrders = () => {
   const [allOrders, setAllOrders] = useState();
   const [number, setNumber] = useState(0);
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://damp-dawn-73737.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

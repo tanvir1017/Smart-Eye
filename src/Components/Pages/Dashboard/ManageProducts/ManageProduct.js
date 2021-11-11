@@ -6,7 +6,7 @@ const ManageProduct = ({ product, setProducts, products }) => {
   const handleDelete = (id) => {
     const proccessed = window.confirm("are you really wants to delete ?");
     if (proccessed) {
-      const url = `http://localhost:5000/products/${id}`;
+      const url = `https://damp-dawn-73737.herokuapp.com/products/${id}`;
       fetch(url, {
         method: "DELETE",
       })

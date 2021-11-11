@@ -33,7 +33,7 @@ const Review = () => {
   const handleLoad = (e) => {
     const userReview = { ...review };
     e.preventDefault();
-    fetch("http://localhost:5000/review", {
+    fetch("https://damp-dawn-73737.herokuapp.com/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

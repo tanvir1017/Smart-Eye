@@ -8,7 +8,7 @@ const MyOrders = () => {
   console.log(user.email);
   const [myOrders, setMyOrders] = useState();
   useEffect(() => {
-    fetch(`http://localhost:5000/email?email=${user.email}`)
+    fetch(`https://damp-dawn-73737.herokuapp.com/email?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setMyOrders(data));
   }, [user.email]);

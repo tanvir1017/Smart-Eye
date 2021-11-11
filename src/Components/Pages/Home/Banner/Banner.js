@@ -11,14 +11,14 @@ const Banner = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              src="http://magento2.templatemela.com/v19/MAG251/skin/frontend/templatemela/MAG100219_1/images/banners/main-banner1.jpg"
+              src="https://i.ibb.co/7SjK5Df/main-banner1.jpg"
               className="d-block w-100"
               alt="..."
             />
           </div>
           <div className="carousel-item">
             <img
-              src="http://magento2.templatemela.com/v19/MAG251/skin/frontend/templatemela/MAG100219_1/images/banners/main-banner2.jpg"
+              src="https://i.ibb.co/qkw3Vnz/main-banner2.jpg"
               className="d-block w-100"
               alt="..."
             />
