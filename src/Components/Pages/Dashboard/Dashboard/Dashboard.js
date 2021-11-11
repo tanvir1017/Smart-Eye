@@ -123,7 +123,7 @@ function Dashboard(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
+        <Toolbar style={{ backgroundColor: "white" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
