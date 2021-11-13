@@ -6,16 +6,6 @@ const BannerSection3 = () => {
     <div className=" backgroundimg3 ">
       <div className="container">
         <div className="easy-steps row ">
-          <div className="row_text">
-            <h2>
-              Buy Easy Steps There are many variations of passages of Smart eye
-              glasses
-            </h2>
-            <p>
-              available, but the majority in some form, by injected of passages
-              ofeven slightly believable.
-            </p>
-          </div>
           <div className="col-md-3 col-sm-12  column-icon">
             <i class="fas fa-search"></i>
             <p className="text-white fw-bold mt-3">Search Your Frame</p>

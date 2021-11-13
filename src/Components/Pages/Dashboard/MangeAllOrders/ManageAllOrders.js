@@ -12,7 +12,7 @@ const ManageAllOrders = () => {
         console.log(data);
         setAllOrders(data);
       });
-  }, []);
+  }, [number]);
   return (
     <Container>
       <div className="products" style={{ marginBottom: "" }}>
@@ -26,7 +26,6 @@ const ManageAllOrders = () => {
             allOrders={allOrders}
             setAllOrders={setAllOrders}
             setNumber={setNumber}
-            number={number}
           ></ManageAllOrder>
         ))}
       </Grid>

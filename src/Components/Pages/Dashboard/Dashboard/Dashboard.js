@@ -17,7 +17,7 @@ import MyOrders from "../MyOrders/MyOrders";
 import Payment from "../Payment/Payment";
 import Review from "../Review/Review";
 
-const drawerWidth = 200;
+const drawerWidth = 250;
 
 function Dashboard(props) {
   let { path, url } = useRouteMatch();

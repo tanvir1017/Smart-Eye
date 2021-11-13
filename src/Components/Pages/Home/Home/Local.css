@@ -1,24 +1,11 @@
-/* .css-1d9c4l9-MuiDrawer-docked .MuiDrawer-paper {
-  width: 15% !important;
-  box-shadow: 4px 0px 8px 0px rgba(36, 36, 36, 0.685) !important;
-  background: linear-gradient(to left, #d45f42, #fa582f) !important;
-}
-.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
-  box-shadow: 4px 0px 8px 0px rgba(36, 36, 36, 0.685) !important;
-  background: linear-gradient(to left, #d45f42, #f75a33) !important;
-}
-.css-i4bv87-MuiSvgIcon-root {
-  box-shadow: 4px 0px 8px 0px rgba(36, 36, 36, 0.685) !important;
-  background: linear-gradient(to left, #d45f42, #f0542e) !important;
-}
 .backgroundimg {
   background-image: url(https://i.ibb.co/px88M0n/wepik-20211010-14198.png);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   height: 70vh;
-} */
-/* bannersection 2 */
+}
+
 .background-banner {
   background-image: url(https://i.ibb.co/FKDrgLS/bg-ptn.jpg);
   clip-path: polygon(49% 0%, 100% 0%, 100% calc(203% - -63vh), -14% -43%);
@@ -26,7 +13,7 @@
   position: relative;
 }
 .backgroundimg3 {
-  background-image: url(https://i.ibb.co/HPp1v4f/banner-2.jpg);
+  background-image: url(https://i.ibb.co/B4JrNgz/banner-8-1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 80vh;
@@ -135,6 +122,12 @@
 .banner_section3 {
   background-image: url(https://i.ibb.co/HPp1v4f/banner-2.jpg);
 }
+.column-icon {
+  margin-top: 250px;
+}
+.column-icon-last-child {
+  margin-top: 250px;
+}
 .column-icon i {
   border: 2px solid rgb(133, 133, 133);
   padding: 50px;
@@ -175,25 +168,13 @@
   margin-top: 120px !important;
 }
 .row_text {
-  width: 75%;
-  margin-left: 150px;
-  margin-top: 50px;
-  margin-bottom: 30px;
-  color: white;
+  display: none;
 }
 .row_text h2 {
-  font-size: 40px;
-  font-weight: bold;
-  text-shadow: 5px 1px 2px black;
+  display: none;
 }
 .row_text p {
-  font-size: 18px;
-}
-
-/* --------------------------------------------------------
------------------------------------------------------------- */
-/* On screens that are 992px or less, set the background color to olive  */
-@media screen and (max-width: 992px) {
+  display: none;
 }
 
 /* On screens that are 600px or less, set the background color to olive  */
@@ -251,22 +232,11 @@
     margin-top: 0px;
   }
   .backgroundimg3 {
+    display: none;
     height: 70vh;
   }
-  .row_text {
-    width: auto;
-    margin-left: 0px;
-    margin-top: 8px;
-    box-shadow: none;
-    margin-bottom: -19px;
-  }
-
-  .row_text h2,
-  p {
-    font-size: 16px;
-    font-weight: 300;
-  }
   .column-icon i {
+    display: block;
     padding: 25px;
     border: 2px solid #bebebe;
     padding: 20px;

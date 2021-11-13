@@ -8,7 +8,11 @@ const Review = (props) => {
   console.log("review", props.review);
   return (
     <Grid xs={12} md={3} sm={6}>
-      <Paper className="bg-light text-muted p-3 m-2" elevation={6}>
+      <Paper
+        className="bg-light text-muted p-3 m-2"
+        style={{ height: "250px" }}
+        elevation={6}
+      >
         <Box className="">
           <img
             style={{
@@ -30,7 +34,7 @@ const Review = (props) => {
             </Typography>{" "}
             <br />
             <Typography variant="caption text">
-              {review.slice(0, 70)}
+              {review.slice(0, 50)}
             </Typography>
           </Box>
         </Box>

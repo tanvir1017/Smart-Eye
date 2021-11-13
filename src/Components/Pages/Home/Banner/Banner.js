@@ -23,6 +23,20 @@ const Banner = () => {
               alt="..."
             />
           </div>
+          <div className="carousel-item">
+            <img
+              src="https://i.ibb.co/rwZ2dk5/banner-9.jpg"
+              className="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="https://i.ibb.co/G3hXByN/banner-7.jpg"
+              className="d-block w-100"
+              alt="..."
+            />
+          </div>
         </div>
         <button
           className="carousel-control-prev"

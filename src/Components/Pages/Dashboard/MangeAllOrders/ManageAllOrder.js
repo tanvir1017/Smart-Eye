@@ -1,15 +1,9 @@
 import { Divider, Grid, Paper, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import React from "react";
 import Rating from "react-rating";
 
-const ManageAllOrder = ({
-  allOrder,
-  setAllOrders,
-  allOrders,
-  number,
-  setNumber,
-}) => {
+const ManageAllOrder = ({ allOrder, setAllOrders, allOrders, setNumber }) => {
   const {
     img,
     name,
@@ -36,11 +30,9 @@ const ManageAllOrder = ({
             const reamaining = allOrders.filter((mycart) => mycart._id !== id);
             setAllOrders(reamaining);
           }
-          console.log(data);
         });
     }
   };
-  const [loading, isLoading] = useState(false);
   const HandelApproved = (e) => {
     const checked = e.target.checked;
 
@@ -53,7 +45,7 @@ const ManageAllOrder = ({
     })
       .then((res) => res.json())
       .then((data) => {
-        isLoading(!loading);
+        setNumber((prev) => prev + 1);
       });
   };
   return (
