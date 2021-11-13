@@ -1,10 +1,13 @@
 import {
+  Alert,
   CircularProgress,
   Container,
   Grid,
   TextField,
   Typography,
 } from "@mui/material";
+import Snackbar from "@mui/material/Snackbar";
+import Stack from "@mui/material/Stack";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import useAuth from "../../../../Hooks/useAuth";
@@ -12,6 +15,7 @@ import "../../Home/Home/Local.css";
 
 const PlaceOrder = ({ product }) => {
   const { user, isLoading } = useAuth();
+  const [open, setOpen] = React.useState(false);
   const { name, img, price, Availability, rating } = product;
   const [purchase, setPurchase] = useState({
     displayName: user.displayName,
@@ -48,9 +52,15 @@ const PlaceOrder = ({ product }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert("Your orderd placed");
+          setOpen(true);
         }
       });
+  };
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
   };
   return (
     <Container sx={{ marginTop: "60px" }}>
@@ -112,6 +122,16 @@ const PlaceOrder = ({ product }) => {
               <CircularProgress />
             </Grid>
           )}
+          <Stack spacing={2}>
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+              <Alert
+                onClose={handleClose}
+                sx={{ width: "100%", background: "black", color: "#fa8b6e" }}
+              >
+                Order placed
+              </Alert>
+            </Snackbar>
+          </Stack>
         </Grid>
       </Grid>
     </Container>

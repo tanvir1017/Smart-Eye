@@ -25,11 +25,10 @@ const Orders = ({ order, myOrders, setMyOrders }) => {
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount) {
-            alert("Product has been deleted");
+            alert("Order deleted");
             const reamaining = myOrders.filter((mycart) => mycart._id !== id);
             setMyOrders(reamaining);
           }
-          console.log(data);
         });
     }
   };
