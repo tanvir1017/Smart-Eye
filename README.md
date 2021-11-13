@@ -54,4 +54,4 @@ To deploy this website we use the firebase and heroku.
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/LvyxC7w/screencapture-localhost-3000-home-2021-11-13-22-03-57.png)
+![App Screenshot](https://i.ibb.co/SVrVXcj/2.jpg)
