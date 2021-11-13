@@ -52,6 +52,6 @@ To deploy this website we use the firebase and heroku.
 
 ![Logo](https://i.ibb.co/Chfd4Nt/logo.png)
 
-## Screenshots
+## Photo view home page
 
-![App Screenshot](https://i.ibb.co/SVrVXcj/2.jpg)
+![Photo view home page](https://i.postimg.cc/43qpMHF4/img-2.png)
