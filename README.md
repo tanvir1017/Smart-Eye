@@ -4,11 +4,7 @@ Hi, I'm [Tanvir Hossain](https://github.com/mdtanvir037)! 👋
 
 I'm a Junior developer...
 
-[Smart Eye](https://smart-eye-glasses.web.app/)!
-
-Let's go the the Earth
-
-## Live site link
+## Live site link [Smart Eye](https://smart-eye-glasses.web.app/)!
 
 ## https://smart-eye-glasses.web.app/
 
