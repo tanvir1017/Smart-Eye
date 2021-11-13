@@ -7,6 +7,7 @@ import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import useAuth from "../../../../Hooks/useAuth";
+import Avatar from "../../../../Image/Avatar.svg";
 import "../../Home/Home/Local.css";
 import AddAProduct from "../AddAProduct/AddAProduct";
 import DashChart from "../DashChart/DashChart";
@@ -30,11 +31,32 @@ function Dashboard(props) {
   };
 
   const drawer = (
-    <div style={{ marginTop: "35%" }} className="dashboard-link">
+    <div style={{ marginTop: "25%" }} className="dashboard-link">
+      {user.photoURL ? (
+        <img
+          style={{
+            width: "50px",
+            marginBottom: "5%",
+            boxShadow: "0px 0px 8px 0px rgba(36, 36, 36, 0.685)",
+            borderRadius: "100px",
+          }}
+          src={user.photoURL}
+          alt=""
+        />
+      ) : (
+        <img
+          style={{
+            width: "50px",
+            marginBottom: "5%",
+            boxShadow: "0px 0px 8px 0px rgba(36, 36, 36, 0.685)",
+            borderRadius: "100px",
+          }}
+          src={Avatar}
+          alt=""
+        />
+      )}
       {user.displayName && (
-        <p className="user-Info">
-          <i className="fas fa-user"> </i> {user.displayName}
-        </p>
+        <p className="user-Info fw-bold">{user.displayName}</p>
       )}
       <Link to="/home">
         <span className="me-3">
@@ -66,7 +88,7 @@ function Dashboard(props) {
           </Link>{" "}
           <Link to={`${url}/manage_product`}>
             <span className="me-3">
-              <i class="fas fa-tasks"></i>
+              <i class="fas fa-store-alt"></i>
             </span>{" "}
             <span className="text-start">Products</span>
           </Link>{" "}
@@ -84,14 +106,12 @@ function Dashboard(props) {
         </span>{" "}
         <span className="text-start">Payment</span>
       </Link>{" "}
-      {!admin && (
-        <Link to={`${url}/review`}>
-          <span className="me-3">
-            <i class="fab fa-replyd"></i>
-          </span>{" "}
-          <span className="text-start">Review</span>
-        </Link>
-      )}
+      <Link to={`${url}/review`}>
+        <span className="me-3">
+          <i class="fab fa-replyd"></i>
+        </span>{" "}
+        <span className="text-start">Review</span>
+      </Link>
       <Link to={`${url}`}>
         {" "}
         <span className="me-3">
@@ -153,7 +173,7 @@ function Dashboard(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },

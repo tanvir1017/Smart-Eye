@@ -8,16 +8,16 @@ import {
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import useAuth from "../../../../Hooks/useAuth";
+import Avatar from "../../../../Image/Review.svg";
 import "../../Home/Home/Local.css";
 
 const Review = () => {
   const { user, isLoading } = useAuth();
 
-  const img = `https://i.ibb.co/3fbSzNr/download.png`;
   const initialInfo = {
     displayName: user.displayName,
     email: user.email,
-    img: user.photoURL || img,
+    img: user.photoURL || Avatar,
     review: "",
     rating: "",
   };
@@ -83,7 +83,7 @@ const Review = () => {
                     name="img"
                     type="text"
                     label="img url"
-                    defaultValue={user.photoURL ? user.photoURL : img}
+                    defaultValue={user.photoURL ? user.photoURL : Avatar}
                     onBlur={HandleLogin}
                     variant="standard"
                   />
@@ -115,14 +115,6 @@ const Review = () => {
                     Send
                   </button>
                   <br />{" "}
-                  {/* <Box className="mt-3">
-                    {user.email && (
-                      <Alert severity="success" className="rounded">
-                        Successfuly loged in
-                      </Alert>
-                    )}
-                    {error && <Alert severity="error">{error} </Alert>}
-                  </Box> */}
                 </form>
               </Grid>
             </Box>
